@@ -1,0 +1,8 @@
+.owl-carousel .owl-stage-outer {
+  height: auto;
+}
+.owl-carousel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

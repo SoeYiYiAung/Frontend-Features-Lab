@@ -1,0 +1,61 @@
+<div class="container mt-4">
+    <div class="text-center mb-4">
+      <h4>Welcome From KBZMS </h4>
+      <p>Your insurance dashboard at a glance!</p>
+    </div>
+  
+    <div class="row row-cols-1 row-cols-md-2 g-3">
+      <div class="col mt-3">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <div class="card-body">
+            <i class="fa-solid fa-calculator fa-2x mb-3 text-primary"></i>
+            <h5 class="card-title">Premium Calculator</h5>
+            <a href="javascript:void(0)" class="btn btn-outline-primary btn-sm mt-2" (click)="goDetails(1)">
+              View For Details
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col mt-3">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <div class="card-body">
+            <i class="fa-solid fa-money-check-dollar fa-2x mb-3 text-success"></i>
+            <h5 class="card-title">Buy Now</h5>
+            <a href="javascript:void(0)" class="btn btn-outline-success btn-sm mt-2" (click)="buyNow()">
+              View For Details
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col mt-3">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <div class="card-body">
+            <i class="fa-solid fa-medal fa-2x mb-3 text-warning"></i>
+            <h5 class="card-title">My Policies</h5>
+            <a href="javascript:void(0)" class="btn btn-outline-warning btn-sm mt-2" (click)="goDetails(3)">
+              View For Details
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col mt-3">
+        <div class="card shadow-sm h-100 text-center p-3">
+          <div class="card-body">
+            <i class="fa-solid fa-circle-exclamation fa-2x mb-3 text-danger"></i>
+            <h5 class="card-title">Claims</h5>
+            <a href="javascript:void(0)" class="btn btn-outline-danger btn-sm mt-2" (click)="claimForm()">
+              View For Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  
+    <div class="alert alert-info text-center mt-3">
+      <strong>Tip:</strong> Renew your policies before the expiry date to stay covered.
+    </div>
+</div>

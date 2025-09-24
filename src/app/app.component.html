@@ -1,0 +1,39 @@
+<div>
+  <img src="assets/homePage.jpg" alt="Home" class="img-fluid rounded mx-auto d-block">
+
+  <!-- Add bottom padding here to avoid overlap -->
+  <div class="container mt-3 mb-5" style="padding-bottom: 50px;">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Sticky Bottom Centered Navbar -->
+  <nav class="navbar navbar-light bg-light fixed-bottom justify-content-center mini-navbar">
+    <ul class="navbar-nav d-flex flex-row text-center w-100 justify-content-around">
+      <li class="nav-item">
+        <a routerLink="" class="nav-link text-dark">
+          <i class="fas fa-home d-block"></i>
+          <small>Home</small>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link text-dark">
+          <i class="fas fa-box-open d-block"></i>
+          <small>Product</small>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="tutorials" class="nav-link text-dark">
+          <i class="fas fa-envelope d-block"></i>
+          <small>Contact</small>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="add" class="nav-link text-dark">
+          <i class="fas fa-question-circle d-block"></i>
+          <small>FAQs</small>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</div>

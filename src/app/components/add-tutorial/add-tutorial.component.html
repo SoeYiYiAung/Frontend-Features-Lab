@@ -1,0 +1,72 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="auth-header">
+        <a href="javascript:"><img src="assets/kbzms_menu_logo.jpg" alt="logo" width="300px" height="100px" /></a>
+      </div>
+      <div class="card my-5">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-end mb-4">
+            <h3 class="mb-0"><b>Login</b></h3>
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input type="username" class="form-control" id="username" placeholder="Username" [(ngModel)]="username"  />
+          </div>
+          <div class="form-group mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="password"   />
+          </div>
+          <div class="d-grid mt-4">
+            <button type="button" class="btn btn-primary" (click)="directToDashboard(username,password)" >Login</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <img src="assets/code-1839406_1280.jpg" alt="logo" width="300px" height="100px" />
+        <img src="assets/computer-programing-coding-web-development-with-isometric-laptop-displaying-futuristic-ui-vector.jpg" alt="logo" width="300px" height="100px" />
+        <img src="assets/Sample_abc.jpg" alt="logo" width="300px" height="100px" />
+      </div>
+
+      <div class="row">
+        <h2>Full-feature TinyMCE Editor</h2>
+
+<editor
+  [(ngModel)]="content"
+  [apiKey]="'pw19l5upp2ygkiolud6dcvdf7pk9dqatc7zpol429yq098zs'"
+  [init]="{
+    height: 400,
+    menubar: true,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount',
+      'textcolor colorpicker'
+    ],
+    toolbar: 'undo redo | formatselect | ' +
+             'bold italic underline strikethrough | forecolor backcolor | ' +
+             'alignleft aligncenter alignright alignjustify | ' +
+             'bullist numlist outdent indent | removeformat | help | link image table',
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+  }"
+></editor>
+
+<div [innerHTML]="content" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></div>
+
+<h2>{{ 'HELLO' | translate }}</h2>
+<p>{{ 'WELCOME' | translate }}</p>
+
+<label>{{ 'TITLE' | translate }}</label>
+<input [(ngModel)]="tutorial.title" type="text" />
+
+<label>{{ 'DESCRIPTION' | translate }}</label>
+<textarea [(ngModel)]="tutorial.description"></textarea>
+
+<button (click)="switchLanguage('en')">English</button>
+<button (click)="switchLanguage('mm')">မြန်မာ</button>
+
+      </div>
+    </div>
+  </div>
+</div>

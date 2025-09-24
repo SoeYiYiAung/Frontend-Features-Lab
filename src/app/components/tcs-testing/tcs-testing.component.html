@@ -1,0 +1,22 @@
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-4">
+            <img src="assets/img1.jpg" alt="Image" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-4">
+            <img src="assets/img2.webp" alt="Image" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-4">
+            <img src="assets/img3.png" alt="Image" style="width: 100%; height: auto;">
+        </div>
+    </div>
+</div>
+
+
+<owl-carousel-o [options]="customOptions">
+  <ng-template carouselSlide *ngFor="let slide of slides">
+    <img [src]="slide.image" alt="Image" style="width: 100%; height: auto;">
+  </ng-template>
+</owl-carousel-o>
+
+
