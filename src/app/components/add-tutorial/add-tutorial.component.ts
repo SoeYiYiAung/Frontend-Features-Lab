@@ -7,7 +7,6 @@ import { environment } from '../../../environments/environment';
 import { AddTutorialService } from './add-tutorial.service';
 // import { sha256 } from 'js-sha256';
 import { SHA256 } from 'crypto-es/lib/sha256';
-import { EditorModule } from '@tinymce/tinymce-angular';
 
 //Language
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -20,7 +19,15 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AddTutorialComponent {
    content: string = '';
-   
+    customOptions = {
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    dots: true,
+    nav: true
+  };
+  
   tutorial: Tutorial = {
     title: '',
     description: '',
@@ -32,11 +39,12 @@ export class AddTutorialComponent {
   password : any;
 
   stringA  ="appid=kp123456789987654321abcdefghijkl&merch_code=100001&merch_order_id=201811212009001&method=kbz.payment.precreate&nonce_str=845255910308564481&notify_url=http://test.com/payment/notify&timestamp=1536637503&total_amount=1000&trade_type=APPH5&trans_currency=MMK&version=1.0&key=192006250b4c09247ec02edce69f6a2d"
+clause: any;
 
   constructor(private tutorialService: AddTutorialService, private translate: TranslateService
   ) {
     // Set default language
-    translate.setDefaultLang('en');
+    // translate.setDefaultLang('en');
   }
 
   // saveTutorial(): void {

@@ -2,5 +2,8 @@
   "HELLO": "Hello",
   "WELCOME": "Welcome to our system",
   "TITLE": "Tutorial Title",
-  "DESCRIPTION": "Description"
+  "DESCRIPTION": "Description",
+  "Login" : "Login",
+  "Username" : "Username",
+  "Password" : "Password"
 }

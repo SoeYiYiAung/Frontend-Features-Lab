@@ -1,10 +1,10 @@
 import {
+  TranslateLoader
+} from "./chunk-LX4RYVWC.js";
+import {
   HttpBackend,
   HttpClient
 } from "./chunk-ADJZ6IYC.js";
-import {
-  TranslateLoader
-} from "./chunk-LX4RYVWC.js";
 import "./chunk-P3MMLRJH.js";
 import {
   Injectable,

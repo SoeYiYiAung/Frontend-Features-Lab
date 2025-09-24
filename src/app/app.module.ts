@@ -13,12 +13,12 @@ import { TcsTestingComponent } from './components/tcs-testing/tcs-testing.compon
 import { SendEmailComponent } from './components/send-email/send-email.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { EditorModule } from '@tinymce/tinymce-angular';
 import { CommonModule } from '@angular/common';
 
 // ✅ ngx-translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader, TRANSLATE_HTTP_LOADER_CONFIG } from '@ngx-translate/http-loader';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 // factory function (no arguments)
 export function HttpLoaderFactory() {
@@ -34,7 +34,6 @@ export function HttpLoaderFactory() {
     TcsTestingComponent,
     SendEmailComponent,
     AddTutorialComponent
-    // AddTutorialComponent is standalone, DO NOT declare
   ],
   imports: [
     BrowserModule,
@@ -45,7 +44,6 @@ export function HttpLoaderFactory() {
     BrowserAnimationsModule,
     CarouselModule,
     CommonModule,
-    EditorModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
@@ -54,6 +52,7 @@ export function HttpLoaderFactory() {
         deps: [HttpClient, TRANSLATE_HTTP_LOADER_CONFIG],
       }
     }),
+    EditorModule
   ],
   providers: [
     {

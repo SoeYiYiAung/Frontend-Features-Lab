@@ -4,6 +4,7 @@
       <div class="auth-header">
         <a href="javascript:"><img src="assets/kbzms_menu_logo.jpg" alt="logo" width="300px" height="100px" /></a>
       </div>
+
       <div class="card my-5">
         <div class="card-body">
           <div class="d-flex justify-content-between align-items-end mb-4">
@@ -29,44 +30,97 @@
         <img src="assets/Sample_abc.jpg" alt="logo" width="300px" height="100px" />
       </div>
 
+      <div class="container">
+      <div class="owl-carousel-wrapper">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide>
+            <img src="assets/img1.jpg" alt="">
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img2.webp" alt="">
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img3.png" alt="">
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/Sample_abc.jpg" alt="">
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/homePage.jpg" alt="">
+          </ng-template>
+          <ng-template carouselSlide>
+            <img src="assets/img3.png" alt="">
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
       <div class="row">
         <h2>Full-feature TinyMCE Editor</h2>
-
-<editor
-  [(ngModel)]="content"
-  [apiKey]="'pw19l5upp2ygkiolud6dcvdf7pk9dqatc7zpol429yq098zs'"
-  [init]="{
-    height: 400,
-    menubar: true,
-    plugins: [
-      'advlist autolink lists link image charmap print preview anchor',
-      'searchreplace visualblocks code fullscreen',
-      'insertdatetime media table paste code help wordcount',
-      'textcolor colorpicker'
-    ],
-    toolbar: 'undo redo | formatselect | ' +
-             'bold italic underline strikethrough | forecolor backcolor | ' +
-             'alignleft aligncenter alignright alignjustify | ' +
-             'bullist numlist outdent indent | removeformat | help | link image table',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
-  }"
-></editor>
-
-<div [innerHTML]="content" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></div>
-
-<h2>{{ 'HELLO' | translate }}</h2>
-<p>{{ 'WELCOME' | translate }}</p>
-
-<label>{{ 'TITLE' | translate }}</label>
-<input [(ngModel)]="tutorial.title" type="text" />
-
-<label>{{ 'DESCRIPTION' | translate }}</label>
-<textarea [(ngModel)]="tutorial.description"></textarea>
-
-<button (click)="switchLanguage('en')">English</button>
-<button (click)="switchLanguage('mm')">မြန်မာ</button>
-
+          <editor
+            [apiKey]="'pw19l5upp2ygkiolud6dcvdf7pk9dqatc7zpol429yq098zs'"
+            initialValue="<p>Hello World!</p>"
+            [init]="{
+              height: 300,
+              menubar: true,
+              plugins: ['advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen', 'insertdatetime', 'media', 'table', 'help', 'wordcount'],
+              toolbar: 'undo redo | formatselect | bold italic backcolor | \
+                        alignleft aligncenter alignright alignjustify | \
+                        bullist numlist outdent indent | removeformat | help'
+            }"
+          ></editor>
       </div>
+
+      <div class="row">
+        <div [innerHTML]="content" style="border:1px solid #ccc; padding:10px; margin-top:10px;"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card my-5 shadow-sm border-0 rounded-3">
+            <div class="card-body">
+              
+              <!-- Language Switch (top-right corner, small buttons) -->
+              <div class="d-flex justify-content-end mb-3">
+                <button class="btn btn-sm btn-outline-primary me-2" (click)="switchLanguage('en')">
+                  English
+                </button>
+                <button class="btn btn-sm btn-outline-secondary" (click)="switchLanguage('mm')">
+                  မြန်မာ
+                </button>
+              </div>
+
+              <!-- Form Title -->
+              <div class="text-center mb-4">
+                <h3 class="fw-bold mb-0">{{ 'HELLO' | translate }} {{ 'WELCOME' | translate }} {{ 'TITLE' | translate }}</h3>
+              </div>
+
+              <!-- Username -->
+              <div class="form-group mb-3">
+                <label class="form-label" for="username">{{ 'Username' | translate }}</label>
+                <input type="text" class="form-control" id="username" placeholder="Username" 
+                  [(ngModel)]="username" />
+              </div>
+
+              <!-- Password -->
+              <div class="form-group mb-3">
+                <label class="form-label" for="password">{{ 'Password' | translate }}</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" 
+                  [(ngModel)]="password" />
+              </div>
+
+              <!-- Login Button -->
+              <div class="d-grid mt-4">
+                <button type="button" class="btn btn-primary" (click)="directToDashboard(username, password)">
+                  {{ 'Login' | translate }}
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
