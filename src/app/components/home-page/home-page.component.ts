@@ -30,7 +30,7 @@ export class HomePageComponent {
   constructor(private route: ActivatedRoute, private router: Router,private http: HttpClient) {}
 
   ngOnInit(): void {
-    new VConsole();
+    // new VConsole();
   }
 
 

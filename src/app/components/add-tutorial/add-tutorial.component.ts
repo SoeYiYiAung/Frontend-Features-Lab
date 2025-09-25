@@ -10,6 +10,7 @@ import { SHA256 } from 'crypto-es/lib/sha256';
 
 //Language
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import tinymce from 'tinymce/tinymce';
 
 @Component({
   selector: 'app-add-tutorial',
@@ -62,6 +63,19 @@ clause: any;
   //   });
   // }
 
+  ngAfterViewInit() {
+    tinymce.init({
+      selector: '#editor',  // match your textarea id
+      plugins: 'link table lists code',
+      toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code',
+      skin_url: '/tinymce/skins/ui/oxide',  // load from local assets
+      content_css: '/tinymce/skins/content/default/content.css',
+ 
+       // Add this line to remove the promo banner
+      promotion: false,  branding: false                                  
+    });
+  }
+  
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
