@@ -1,3 +1,11 @@
+- Setup Features
+    - Text Editor
+    - Localization
+    - Owl Carousel
+    - Sticky Bottom Centered Navbar
+    - Font Awesome Icon
+
+
 -- No API Key is needed in old Tinymce Version
 
     => if already install other version, remove first

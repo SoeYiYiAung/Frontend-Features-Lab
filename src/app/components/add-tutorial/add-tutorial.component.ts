@@ -19,14 +19,22 @@ import tinymce from 'tinymce/tinymce';
   standalone: false
 })
 export class AddTutorialComponent {
-   content: string = '';
-    customOptions = {
+  content: string = '';
+
+  customOptions = {
     loop: true,
     autoplay: true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 2500,
     autoplayHoverPause: true,
-    dots: true,
-    nav: true
+    dots: false, // hide dots if you want only arrows
+    nav: true,
+    navText: ['&#10094;', '&#10095;'], // left & right arrows
+    margin: 10,
+    responsive: {
+      0: { items: 1 },
+      600: { items: 2 },
+      1000: { items: 3 }
+    }
   };
   
   tutorial: Tutorial = {
@@ -40,7 +48,7 @@ export class AddTutorialComponent {
   password : any;
 
   stringA  ="appid=kp123456789987654321abcdefghijkl&merch_code=100001&merch_order_id=201811212009001&method=kbz.payment.precreate&nonce_str=845255910308564481&notify_url=http://test.com/payment/notify&timestamp=1536637503&total_amount=1000&trade_type=APPH5&trans_currency=MMK&version=1.0&key=192006250b4c09247ec02edce69f6a2d"
-clause: any;
+  clause: any;
 
   constructor(private tutorialService: AddTutorialService, private translate: TranslateService
   ) {
@@ -75,7 +83,7 @@ clause: any;
       promotion: false,  branding: false                                  
     });
   }
-  
+
   newTutorial(): void {
     this.submitted = false;
     this.tutorial = {
