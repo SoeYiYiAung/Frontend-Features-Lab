@@ -5,5 +5,10 @@
   "DESCRIPTION": "Description",
   "Login" : "Login",
   "Username" : "Username",
-  "Password" : "Password"
+  "Password" : "Password",
+
+  "HOME": "Home",
+  "PRODUCT": "Product",
+  "CONTACT": "Contact",
+  "FAQS": "FAQs"
 }

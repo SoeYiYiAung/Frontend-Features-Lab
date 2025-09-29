@@ -1,4 +1,29 @@
 <div>
+  <div class="d-flex justify-content-between align-items-center p-2 auth-header">
+    <!-- Logo on the left -->
+    <a href="javascript:void(0)">
+      <img src="assets/kbzms_menu_logo.jpg" alt="logo" width="200" height="70">
+    </a>
+
+    <!-- Language switcher on the right -->
+    <div class="btn-group" role="group" aria-label="Language switcher">
+      <button 
+        class="btn d-flex align-items-center"
+        [ngClass]="{'btn-primary': currentLang === 'en', 'btn-outline-primary': currentLang !== 'en'}"
+        (click)="switchLanguage('en')">
+        EN
+      </button>
+      <button 
+        class="btn d-flex align-items-center"
+        [ngClass]="{'btn-success': currentLang === 'mm', 'btn-outline-success': currentLang !== 'mm'}"
+        (click)="switchLanguage('mm')">
+        MM
+      </button>
+    </div>
+  </div>
+
+
+
   <img src="assets/code-1839406_1280.jpg" alt="Home" class="img-fluid rounded mx-auto d-block">
 
   <!-- Add bottom padding here to avoid overlap -->
@@ -12,25 +37,25 @@
       <li class="nav-item">
         <a routerLink="" class="nav-link text-dark">
           <i class="fas fa-home d-block"></i>
-          <small>Home</small>
+          <small>{{ 'HOME' | translate }}</small>
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="add" class="nav-link text-dark">
           <i class="fas fa-box-open d-block"></i>
-          <small>Product</small>
+          <small>{{ 'PRODUCT' | translate }}</small>
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="tutorials" class="nav-link text-dark">
           <i class="fas fa-envelope d-block"></i>
-          <small>Contact</small>
+          <small>{{ 'CONTACT' | translate }}</small>
         </a>
       </li>
       <li class="nav-item">
         <a routerLink="add" class="nav-link text-dark">
           <i class="fas fa-question-circle d-block"></i>
-          <small>FAQs</small>
+          <small>{{ 'FAQS' | translate }}</small>
         </a>
       </li>
     </ul>

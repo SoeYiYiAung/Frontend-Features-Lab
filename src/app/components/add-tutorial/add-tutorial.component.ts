@@ -53,7 +53,7 @@ export class AddTutorialComponent {
   constructor(private tutorialService: AddTutorialService, private translate: TranslateService
   ) {
     // Set default language
-    // translate.setDefaultLang('en');
+    translate.setDefaultLang('en');
   }
 
   // saveTutorial(): void {
